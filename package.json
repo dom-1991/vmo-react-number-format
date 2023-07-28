@@ -1,20 +1,20 @@
 {
-  "name": "react-number-format",
+  "name": "vmo-react-number-format",
   "description": "React component to format number in an input or as a text.",
   "version": "5.2.2",
   "main": "dist/react-number-format.cjs.js",
   "module": "dist/react-number-format.es.js",
   "types": "types/index.d.ts",
   "sideEffects": false,
-  "author": "Sudhanshu Yadav",
+  "author": "Tabu",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/s-yadav/react-number-format"
+    "url": "https://github.com/dom-1991/vmo-react-number-format"
   },
   "bugs": {
-    "mail": "sudhanshuyadav2@gmail.com",
-    "url": "https://github.com/s-yadav/react-number-format/issues"
+    "mail": "thangbui.071192@gmail.com",
+    "url": "https://github.com/dom-1991/vmo-react-number-format/issues"
   },
   "keywords": [
     "react-component",
