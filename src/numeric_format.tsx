@@ -131,6 +131,19 @@ function isNumericString(
   );
 }
 
+function convertFullwidthToHalfwidth(val: string) {
+  let ascii = '';
+  for(let i=0, l=val.length; i<l; i++) {
+    let c = val[i].charCodeAt(0);
+    // make sure we only convert half-full width char
+    if (c >= 0xFF00 && c <= 0xFFEF) {
+      c = 0xFF & (c + 0x20);
+    }
+    ascii += String.fromCharCode(c);
+  }
+  return ascii
+}
+
 export function removeFormatting<BaseType = InputAttributes>(
   value: string,
   changeMeta: ChangeMeta = getDefaultChangeMeta(value),
@@ -147,6 +160,7 @@ export function removeFormatting<BaseType = InputAttributes>(
    * If only a number is added on empty input which matches with the prefix or suffix,
    * then don't remove it, just return the same
    */
+  value = this.convertFullwidthToHalfwidth(value)
   if (
     charIsNumber(value) &&
     (value === prefix || value === suffix) &&
